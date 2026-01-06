@@ -1,0 +1,35 @@
+---
+title: "Public Health 345, Winter 2026"
+format: 
+  html:
+    theme: lux
+    fontsize: 1.5em
+    self-contained: true
+    smooth-scroll: true
+editor: source
+---
+
+<!---
+--->
+
+[Introduction](https://psboonstra.github.io/PH345_W2026/Slides/Introduction/Introduction.html#/title-slide)
+
+Scatterplots
+
+Univariate Plots
+
+Aesthetics
+
+Color
+
+Facets
+
+Maps
+
+Chartjunk, Deception, and Chicanery
+
+Case Study: 1900 Paris Exposition
+
+Models
+
+Shiny
