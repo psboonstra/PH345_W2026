@@ -1,35 +1,38 @@
 ---
-title: "Public Health 345, Winter 2026"
+title: "Public Health 345"
+subtitle: "Public Health Data Visualization | Winter 2026"
 format: 
   html:
     theme: lux
-    fontsize: 1.5em
+    fontsize: 1.5em 
     self-contained: true
     smooth-scroll: true
+    toc: false
+    # --- ADD THESE LINES ---
+    page-layout: full       # Uses the full width of the screen
 editor: source
 ---
 
-<!---
---->
+## Lecture Materials
 
-[Introduction](https://psboonstra.github.io/PH345_W2026/Slides/Introduction/Introduction.html#/title-slide)
+| \# | Topic | Slide Link |
+|:---------------------|:---------------------|:--------------------------:|
+| 01 | Introduction | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Introduction/Introduction.html#/title-slide" class="btn btn-outline-primary btn-sm">View Slides</a> |
+| 02 | Scatterplots | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 03 | Univariate Plots | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 04 | Aesthetics | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 05 | Color | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 06 | Facets | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 07 | Maps | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 08 | Chartjunk & Deception | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 09 | 1900 Paris Exposition | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 10 | Models | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 11 | Shiny | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
 
-Scatterplots
+------------------------------------------------------------------------
 
-Univariate Plots
+### Resources & Tips
 
-Aesthetics
-
-Color
-
-Facets
-
-Maps
-
-Chartjunk, Deception, and Chicanery
-
-Case Study: 1900 Paris Exposition
-
-Models
-
-Shiny
+-   **Slide Navigation:** Use the arrow keys to navigate. Press `o` for an overview of all slides.
+-   **Full Screen:** Press `f` to enter full-screen mode.
+-   **Printing:** To save slides as a PDF, open the slides and use the browser's print function (`Ctrl/Cmd + P`).

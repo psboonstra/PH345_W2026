@@ -1,0 +1,27 @@
+/*-- scss:defaults --*/
+// These variables change the "engine" of the theme
+$body-bg: #ffffff;
+$body-color: #333;
+$presentation-heading-font: 'Open Sans', sans-serif;
+$presentation-heading-color: #2c3e50;
+$presentation-font-size-root: 36px;
+
+/*-- scss:rules --*/
+// These are standard CSS rules for specific elements
+
+.reveal h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid #f8f9fa;
+  padding-bottom: 10px;
+}
+
+.reveal .footer {
+  font-size: 0.5em;
+  color: #adb5bd;
+}
+
+/* Optional: Make bold text a specific color to pop */
+strong {
+  color: #1a1a1a;
+}
