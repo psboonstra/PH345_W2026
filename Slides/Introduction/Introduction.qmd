@@ -67,7 +67,7 @@ Cause of British soldiers' death during Crimean War: blue denotes preventable de
 
 ## 
 
-![](fnlines.png){width="90%"}
+![](fnlines.png){.nostretch width="90%"}
 Comparison of mortality between English civilians and soldiers *living in barracks in England during peacetime*
 
 ::: {style="font-size: 75%;"}
@@ -97,7 +97,7 @@ Chapter 2 of Unwin (2024)
 
 ##
 
-![](fig21gmg.png){width="70%"}
+![](fig21gmg.png){.nostretch width="70%"}
 
 What do you see?
 
@@ -107,15 +107,16 @@ Ukraine famine: 1932
 Irish potato famine: 1840s
 Tunisian cholera epidemic: 1891
 Measles epidemic in Fiji 1875
+Rwandain1994(thecivilwar)andHaitiin2010(anearthquake).
 :::
 
 ##
 
-![](fig22agmg.png){width="70%"}
+![](fig22agmg.png){.nostretch width="70%"}
 
 ##
 
-![](fig22bgmg.png){width="70%"}
+![](fig22bgmg.png){.nostretch width="70%"}
 
 ##
 
@@ -129,144 +130,83 @@ Measles epidemic in Fiji 1875
 
 ![](fig26gmg.png){.nostretch width=90%}
 
+:::{.speaker-notes}
+
+AustraliaandNewZealandinAsia,
+SeychellesinAfrica,
+theUSAandCanadaintheAmericas.
+TheEuropeancountrywithlowestvaluesformanyyearsafter1950wasTurkey.
+:::
+
 ##
 
-![](fig29gmg.png){width="70%"}
+![](fig29gmg.png){.nostretch width="70%"}
 
+## Ex 3: Antibiotic efficacy
 
-## Ex 3: Mapping COVID-19
+![](Burtin1951a.png){.nostretch width=70%}
 
-![](Covid00.png)
 
 ::: {style="font-size: 75%;"}
-<https://www.esri.com/arcgis-blog/products/product/mapping/mapping-coronavirus-responsibly/>
+Will Burtin (1951);  Mike Bostock (2010); 
+
+<https://www.americanscientist.org/article/thats-funny>;
+
+<https://www.wired.com/story/is-your-chart-a-detective-story-or-a-police-report/>;
 :::
 
-## 
+##
 
-::::: columns
-::: {.column width="40%"}
--   Chloropeth: graduated colors
+![](Burtin1951b.png){.nostretch width=70%}
 
--   Provinces are different sizes, different populations
 
--   Comparison across provinces is difficult
+:::{.speaker-notes}
+middle row: Two of these bacteria are Streptococcus and one is not
+secondfromtop row: why does the third Strep bacteria, Streptococcus fecalis 
 :::
 
-::: {.column width="60%"}
-![](Covid01.png)
-:::
-:::::
 
-## 
+Brian Schmotzer (2008); Morgan Ryan (2009);
 
-::::: columns
-::: {.column width="40%"}
--   Bar chart of number of cases for each Chinese province
+##
 
--   Is a map justified?
-:::
+![](Burtin1951c.png){.nostretch width=70%}
 
-::: {.column width="60%"}
-![](Covid02.png)
-:::
-:::::
+Morgan Ryan (2009);
 
-## 
+## Ex 4: Racial Segregation in Detroit, MI
 
-::::: columns
-::: {.column width="40%"}
--   Blue replaces red. Less "emotive"
 
--   Rates replace totals
-
--   Hubei province rightly set apart from others
+::: {style="font-size: 75%;"}
+<https://www.nbcnews.com/specials/detroit-segregation-wall/>
 :::
 
-::: {.column width="60%"}
-![](Covid03.png)
-:::
-:::::
+##
 
-## 
+![](detroit1.png){.nostretch width=90%}
 
-::::: columns
-::: {.column width="40%"}
--   Dots representing 10 cases randomly placed in each province
+##
 
--   Potential misleading conclusion that Hubei province was overwhelmed
-:::
+![](detroit2.png){.nostretch width=90%}
 
-::: {.column width="60%"}
-![](Covid04.png)
-:::
-:::::
+##
 
-## 
+![](detroit3.png){.nostretch width=90%}
 
-::::: columns
-::: {.column width="40%"}
--   Totals represented by proportional circles
+##
 
--   Not adjusted for population
+![](detroit4.png){.nostretch width=90%}
 
--   All areas represented, e.g. Macau and Hong Kong
-:::
+##
 
-::: {.column width="60%"}
-![](Covid05.png)
-:::
-:::::
+![](detroit5.png){.nostretch width=90%}
 
-## 
+##
 
-::::: columns
-::: {.column width="40%"}
--   Log-transformed totals
+<https://www.nbcnews.com/specials/detroit-segregation-wall/>
 
--   Importance of legend
 
--   Logarithm de-emphasizes extremely large values but risks over-emphasizing small values
-:::
-
-::: {.column width="60%"}
-![](Covid06.png)
-:::
-:::::
-
-## 
-
-::::: columns
-::: {.column width="40%"}
--   Inappropriate ‘smoothing’ of data based upon geographic center
-
--   Epicenter (Hubei) is lost
-
--   Suggests all of eastern China was overwhelmed
-:::
-
-::: {.column width="60%"}
-![](Covid07.png)
-:::
-:::::
-
-## 
-
-::::: columns
-::: {.column width="40%"}
--   Choice of projection
-
--   Web Mercator: up is always north. Distortions lead to risk of misinterpreting geographic area
-
--   Albers Equal Area preserves geographic area but can distort shape
-:::
-
-::: {.column width="60%"}
-![](Covid08.png)
-:::
-:::::
-
-## Ex 4: Cholera, John Snow
+## Ex 5: Cholera, John Snow
 
 ::::: columns
 
@@ -333,25 +273,26 @@ Although normally presented as strict-cause effect, truth is not as clear cut
 ## How will your grade be determined?
 
 1. Modules 1-3 of online course “Arranging and Visualizing Data in R” (26%)
-<https://www.coursera.org/learn/arranging-visualizing-data-r>
 
-2. Plot of the week
+  <https://www.coursera.org/learn/arranging-visualizing-data-r>
 
-3. Out-of-class assessments (3x)
+2. Plot of the week (30%)
 
-4. In-class quizzes (2x)
+3. Out-of-class assessments (3x; 7% each)
 
-5. Participation through attendance
+4. In-class quizzes (2x; 8% each)
+
+5. Participation through attendance (7%)
 
 ## Next steps
 
-1. Complete office hours poll: <https://whenisgood.net/rmixcrd>
+1. Complete office hours poll: <https://whenisgood.net/spy772s>
 
 2. Create Coursera account using your umich email and register for *Arranging and Visualizing Data in R* course: <https://www.coursera.org/learn/arranging-visualizing-data-r/>
 
-3. Create posit.cloud account. Recommended but not required to use your umich email
+3. Create a [posit.cloud](https://posit.cloud/) account. Recommended but not required to use your umich email
 
-4. Join the PH345 workspace via <https://posit.cloud/spaces/600155/join?access_code=Lv4YkrpGmhlIC-bGQwKOPYmLdO1a5mVzhqmZtFGm>
+4. Join the PH345 workspace via the link on the Canvas Homepage
 
 
 
@@ -361,10 +302,14 @@ Andrews, R.J., 2022. How Florence Nightingale changed data visualization forever
 
 Field, K., 2020. Mapping coronavirus, responsibly. [online] ArcGIS Blog. Available at: https://www.esri.com/arcgis-blog/products/product/mapping/mapping-coronavirus-responsibly/.
 
+Gelman, A., 2020. Is Your Chart a Detective Story? Or a Police Report? [online] Wired. Available at: https://www.wired.com/story/is-your-chart-a-detective-story-or-a-police-report/.
+
 Gilbert, E.W., 1958. *Pioneer maps of health and disease in England*. The Geographical Journal, 124(2), pp.172-183.
 
 Small, H., 2019. Florence Nightingale’s statistical diagrams. [online] Available at: https://www.york.ac.uk/depts/maths/histstat/small.htm.
 
 Unwin, A., 2024. Getting (more out of) Graphics: Practice and Principles of Data Visualisation. CRC Press.
+
+Wainer, H. and Lysen, S., 2009. A window on data can be a window on discovery. Amer. Scientist, 97(4), p.272.
 
 Wikipedia Contributors, 2019. 1854 Broad Street cholera outbreak. [online] Wikipedia. Available at: https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak.

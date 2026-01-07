@@ -3082,66 +3082,16 @@ vertical-align: -.125em;
 </colgroup>
 <thead>
 <tr class="header">
-<th style="text-align: left;">#</th>
+<th style="text-align: left;">Date</th>
 <th style="text-align: left;">Topic</th>
 <th style="text-align: center;">Slide Link</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: left;">01</td>
+<td style="text-align: left;">1/12</td>
 <td style="text-align: left;">Introduction</td>
-<td style="text-align: center;"><a href="https://psboonstra.github.io/PH345_W2026/Slides/Introduction/Introduction.html#/title-slide" class="btn btn-outline-primary btn-sm">View Slides</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">02</td>
-<td style="text-align: left;">Scatterplots</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">03</td>
-<td style="text-align: left;">Univariate Plots</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">04</td>
-<td style="text-align: left;">Aesthetics</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">05</td>
-<td style="text-align: left;">Color</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">06</td>
-<td style="text-align: left;">Facets</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">07</td>
-<td style="text-align: left;">Maps</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">08</td>
-<td style="text-align: left;">Chartjunk &amp; Deception</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">09</td>
-<td style="text-align: left;">1900 Paris Exposition</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">10</td>
-<td style="text-align: left;">Models</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">11</td>
-<td style="text-align: left;">Shiny</td>
-<td style="text-align: center;"><a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a></td>
+<td style="text-align: center;"><a href="https://psboonstra.github.io/PH345_W2026/Slides/Introduction/Introduction.html#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a></td>
 </tr>
 </tbody>
 </table>
@@ -3153,6 +3103,13 @@ vertical-align: -.125em;
 <li><strong>Full Screen:</strong> Press <code>f</code> to enter full-screen mode.</li>
 <li><strong>Printing:</strong> To save slides as a PDF, open the slides and use the browser’s print function (<code>Ctrl/Cmd + P</code>).</li>
 </ul>
+<style>
+
+.btn-lecture {
+font-size: 1.1rem !important; padding: 0.5rem 1rem !important;
+font-weight: 500;
+}
+</style>
 </section>
 </section>
 
@@ -3262,11 +3219,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         if (link.dataset.originalHref !== undefined) {
           link.href = link.dataset.originalHref;
         }
-          // target, if specified
-          link.setAttribute("target", "_blank");
-          if (link.getAttribute("rel") === null) {
-            link.setAttribute("rel", "noopener");
-          }
       }
     }
   function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

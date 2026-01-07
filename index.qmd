@@ -13,21 +13,14 @@ format:
 editor: source
 ---
 
+
+
 ## Lecture Materials
 
-| \# | Topic | Slide Link |
+| Date | Topic | Slide Link |
 |:---------------------|:---------------------|:--------------------------:|
-| 01 | Introduction | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Introduction/Introduction.html#/title-slide" class="btn btn-outline-primary btn-sm">View Slides</a> |
-| 02 | Scatterplots | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
-| 03 | Univariate Plots | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
-| 04 | Aesthetics | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
-| 05 | Color | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
-| 06 | Facets | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
-| 07 | Maps | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
-| 08 | Chartjunk & Deception | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
-| 09 | 1900 Paris Exposition | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
-| 10 | Models | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
-| 11 | Shiny | <a href="#" class="btn btn-outline-secondary btn-sm disabled">Coming Soon</a> |
+| 1/12 | Introduction | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Introduction/Introduction.html#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
+
 
 ------------------------------------------------------------------------
 
@@ -36,3 +29,13 @@ editor: source
 -   **Slide Navigation:** Use the arrow keys to navigate. Press `o` for an overview of all slides.
 -   **Full Screen:** Press `f` to enter full-screen mode.
 -   **Printing:** To save slides as a PDF, open the slides and use the browser's print function (`Ctrl/Cmd + P`).
+
+
+<style>
+  /* 1. Increase button font size and padding */
+  .btn-lecture {
+    font-size: 1.1rem !important; 
+    padding: 0.5rem 1rem !important;
+    font-weight: 500;
+  }
+</style>
