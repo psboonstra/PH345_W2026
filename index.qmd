@@ -20,6 +20,7 @@ editor: source
 | Date | Topic | Slide Link |
 |:---------------------|:---------------------|:--------------------------:|
 | 1/12 | Introduction | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Introduction/Introduction.html#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
+| 1/26 | Scatterplots | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Scatterplots/Scatterplots#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 
 
 ------------------------------------------------------------------------
