@@ -22,6 +22,7 @@ editor: source
 | 1/12 | Introduction | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Introduction/Introduction.html#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 | 1/26 | Scatterplots | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Scatterplots/Scatterplots#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 | 2/02 | Univariate Plots | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Univariate/Univariate#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
+| 2/09 | Aesthetics | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Aesthetics/Aesthetics#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 
 
 ------------------------------------------------------------------------
