@@ -14,8 +14,7 @@ editor: source
 ---
 
 
-
-## Lecture Materials
+### Lecture Materials
 
 | Date | Topic | Slide Link |
 |:---------------------|:---------------------|:--------------------------:|
@@ -23,9 +22,19 @@ editor: source
 | 1/26 | Scatterplots | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Scatterplots/Scatterplots#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 | 2/02 | Univariate Plots | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Univariate/Univariate#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 | 2/09 | Aesthetics | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Aesthetics/Aesthetics#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
+| 2/16 | Color | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Color/Color#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 
 
 ------------------------------------------------------------------------
+
+### License Information
+
+This work is licensed under the GPL-3.0 license. You are free to copy, modify,
+and distribute these slides as long as you do so using the same license and with
+the understanding that I offer no warranty on this software. I have put
+considerable time and effort into this work, and so if you use these slides in
+your own teaching or presentations, I ask that you provide appropriate
+acknowledgement.
 
 ### Resources & Tips
 
