@@ -24,6 +24,7 @@ editor: source
 | 2/09 | Aesthetics | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Aesthetics/Aesthetics#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 | 2/16 | Color | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Color/Color#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 | 3/9 | Facets | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Facets/Facets#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
+| 3/16 | Maps | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Maps/Maps#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 
 
 ------------------------------------------------------------------------
