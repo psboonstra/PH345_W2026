@@ -1100,6 +1100,9 @@ Philip Boonstra
 </div><div class="column" style="width:40%;">
 <p>What the plot has: <span class="math inline">\(x/y = 257.87/147\)</span> (diameter/radius proportional to data</p>
 <p>What <em>should</em> the plot have?</p>
+<div class="cell" data-layout-align="center">
+<p><span class="math inline">\(x^2/y^2 = 257.87/147\)</span> (area proportional to data)</p>
+</div>
 </div></div>
 <div style="font-size: 75%;">
 <p><a href="https://www.vox.com/2014/8/20/6040435/als-ice-bucket-challenge-and-why-we-give-to-charity-donate" class="uri">https://www.vox.com/2014/8/20/6040435/als-ice-bucket-challenge-and-why-we-give-to-charity-donate</a></p>
@@ -1227,7 +1230,9 @@ Philip Boonstra
 <div style="font-size: 75%;">
 <p>Figure 1C and 1D, Wittke-Thompson, et al. (2005)</p>
 </div>
-<p>Note that Figure 1D plots y=0, which is the expected value under the multiplicative model, but the plot itself is not labeled as such. This makes it difficult to interpret the plot and understand the implications of the results. :::{.speaker-notes} :::</p>
+<div class="speaker-notes">
+<p>Note that Figure 1D plots y=0, which is the expected value under the multiplicative model, but the plot itself is not labeled as such. This makes it difficult to interpret the plot and understand the implications of the results.</p>
+</div>
 </section>
 <section id="kaiser-fung" class="slide level2">
 <h2>Kaiser Fung</h2>
@@ -1289,7 +1294,40 @@ Philip Boonstra
 </div>
 </div>
 <div id="tabset-1-3">
-
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href></a>p1 <span class="ot">&lt;-</span> </span>
+<span id="cb2-2"><a href></a>  benefits <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href></a>  <span class="fu">summarize</span>(<span class="at">Dollars_BaselineBen =</span> <span class="fu">sum</span>(Dollars_BaselineBen),</span>
+<span id="cb2-4"><a href></a>            <span class="at">Dollars_FullBen_Entitle =</span> <span class="fu">sum</span>(Dollars_FullBen_Entitle),</span>
+<span id="cb2-5"><a href></a>            <span class="at">Dollars_FullBen_NoHouse =</span> <span class="fu">sum</span>(Dollars_FullBen_NoHouse),</span>
+<span id="cb2-6"><a href></a>            <span class="at">Dollars_FullBen_All =</span> <span class="fu">sum</span>(Dollars_FullBen_All)) <span class="sc">%&gt;%</span></span>
+<span id="cb2-7"><a href></a>  <span class="fu">pivot_longer</span>(<span class="fu">everything</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb2-8"><a href></a>  <span class="fu">mutate</span>(</span>
+<span id="cb2-9"><a href></a>    <span class="at">pretty_name =</span> </span>
+<span id="cb2-10"><a href></a>      <span class="fu">case_when</span>(</span>
+<span id="cb2-11"><a href></a>        name <span class="sc">==</span> <span class="st">&quot;Dollars_BaselineBen&quot;</span> <span class="sc">~</span> <span class="st">&quot;Current funding and</span><span class="sc">\n</span></span>
+<span id="cb2-12"><a href></a><span class="st">participation&quot;</span>, </span>
+<span id="cb2-13"><a href></a>        name <span class="sc">==</span> <span class="st">&quot;Dollars_FullBen_Entitle&quot;</span> <span class="sc">~</span> <span class="st">&quot;100% participation in SSI</span><span class="sc">\n</span><span class="st"> and SNAP&quot;</span>,</span>
+<span id="cb2-14"><a href></a>        name <span class="sc">==</span> <span class="st">&quot;Dollars_FullBen_NoHouse&quot;</span> <span class="sc">~</span> <span class="st">&quot;100% participation in SSI,</span><span class="sc">\n</span><span class="st"> SNAP, WIC, TANF, CCDF,</span><span class="sc">\n</span><span class="st"> and LIHEAP&quot;</span>,</span>
+<span id="cb2-15"><a href></a>        name <span class="sc">==</span> <span class="st">&quot;Dollars_FullBen_All&quot;</span> <span class="sc">~</span> <span class="st">&quot;100% participation in all</span><span class="sc">\n</span><span class="st"> programs, including</span><span class="sc">\n</span><span class="st">housing subsidies&quot;</span></span>
+<span id="cb2-16"><a href></a>      ) <span class="sc">%&gt;%</span> <span class="fu">factor</span>() <span class="sc">%&gt;%</span> <span class="fu">fct_inorder</span>()) <span class="sc">%&gt;%</span></span>
+<span id="cb2-17"><a href></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb2-18"><a href></a>  <span class="fu">geom_col</span>(<span class="fu">aes</span>(<span class="at">x =</span> pretty_name, <span class="at">y =</span> value), <span class="at">fill =</span> <span class="st">&quot;#30ccf7&quot;</span>) <span class="sc">+</span></span>
+<span id="cb2-19"><a href></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">&quot;Billions of Dollars&quot;</span>, </span>
+<span id="cb2-20"><a href></a>                     <span class="at">labels =</span> scales<span class="sc">::</span>dollar) <span class="sc">+</span></span>
+<span id="cb2-21"><a href></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="cn">NULL</span>) <span class="sc">+</span> </span>
+<span id="cb2-22"><a href></a>  <span class="fu">theme</span>(</span>
+<span id="cb2-23"><a href></a>    <span class="co"># no vertical gridlines:</span></span>
+<span id="cb2-24"><a href></a>    <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-25"><a href></a>    <span class="co"># grey horizontal gridlines:</span></span>
+<span id="cb2-26"><a href></a>    <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">color =</span> <span class="st">&quot;lightgrey&quot;</span>),</span>
+<span id="cb2-27"><a href></a>    <span class="co"># no grey background:</span></span>
+<span id="cb2-28"><a href></a>    <span class="at">panel.background =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-29"><a href></a>    <span class="co"># no tick marks:</span></span>
+<span id="cb2-30"><a href></a>    <span class="at">axis.ticks =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb2-31"><a href></a>    <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">7</span>)) </span>
+<span id="cb2-32"><a href></a>p1 <span class="sc">+</span> <span class="fu">coord_cartesian</span>(<span class="at">ylim =</span> <span class="fu">c</span>(<span class="dv">215</span>, <span class="dv">450</span>), <span class="at">expand =</span> <span class="cn">FALSE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -1311,7 +1349,10 @@ Philip Boonstra
 </div>
 </div>
 <div id="tabset-2-2">
-
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href></a><span class="co">#(See previous slide for p1 construction)</span></span>
+<span id="cb3-2"><a href></a>p1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </div>
 </div>
 </div>
