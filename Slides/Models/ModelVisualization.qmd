@@ -42,9 +42,9 @@ code_flag = FALSE;# Set to true and recompile after class
 
 ## Personal Introduction
 
--   3rd Year PhD student in the Dept. of Biostatistics
+-   PhD candidate in the Dept. of Biostatistics
 
--   **Interests include:** Cancer Biostatistics, Clinical Trials, Surrogate Endpoints
+-   **Interests include:** cancer biostatistics, survival analysis, multiple imputation, and multi-state models, and teaching
 
 -   **Hobbies:** Cooking, Hiking, Volleyball, Traveling
 
@@ -60,8 +60,11 @@ code_flag = FALSE;# Set to true and recompile after class
 
 ## Learning Objectives
 
-1.  Understand and explain the difference between descriptive and inferential plot
-2.  Understand the importance of communicating uncertainty in inferential plots
+1.  Compare and contrast the strengths of tables and figures for presenting results from statistical models
+2.  Differentiate between descriptive and inferential plots
+3.  Recognize the importance of communicating uncertainty in inferential plots
+4.  Describe types of plots that can be used to visualize results from statistical models
+5.  Use R to visualize results from a linear regression model
 
 ## Motivation
 
@@ -69,6 +72,7 @@ code_flag = FALSE;# Set to true and recompile after class
 
     -   Linear Regression Models *(continuous outcomes)*
     -   Logistic Regression Models *(binary outcome)*
+    -   Cox Proportional Hazards Models *(time-to-event outcomes)*
     -   Meta-analyses
     -   Many more...
 
@@ -90,25 +94,34 @@ What information is easily accessible from the forest plot that is difficult to 
 
 ## Case Study #2
 
-[Results](https://drkebede.medium.com/plotting-regression-model-coefficients-in-a-forest-plot-cada8a51e4d2) from a multiple linear regression exploring the impact of country-level variables on average life expectancy.![Reference: Kebede (2021)](images/Bad%20Forest%20Plot.png){width="664"}
+[Results](https://drkebede.medium.com/plotting-regression-model-coefficients-in-a-forest-plot-cada8a51e4d2) from a multiple linear regression exploring the impact of country-level variables on average life expectancy.
+
+![Reference: Kebede (2021)](images/Bad%20Forest%20Plot.png){width="664"}
 
 What is the first thing that stands out to you in this plot?
 
 Which of Tufte's principles of graphical excellence does this violate?
 
-## Previously...
 
-Focus was on visualization tools that display data in its raw form
+## Activity: Descriptive vs Inferential Plots
+
+- **Previously**: Focus was on visualization tools that display data in its raw form
+- **Today**: Focus on visualization tools that display results from statistical modeling
+
+Can you think of similarities and differences between these two types of plots?
+
+
+## Activity: Recap
+
+**Descriptive Plots:**
 
 -   boxplots, histograms show distribution of observed data
 
 -   scatter plots show relationship between two continuous variables
 
-**How can we use the color, shapes, and other aesthetics to best convey information contained within the data?**
+How can we use the color, shapes, and other aesthetics to best convey information contained within the data?
 
-## A New Goal
-
-Focus on visualization tools that display results from data analysis.
+**Inferential Plots:**
 
 -   parameter estimates (i.e. regression coefficients)
 
@@ -116,7 +129,7 @@ Focus on visualization tools that display results from data analysis.
 
 -   predicted values
 
-**How can we use the color, shapes, and other aesthetics to best convey the results of statistical modeling?**
+How can we use the color, shapes, and other aesthetics to best convey the results of statistical modeling?
 
 ## Liner Regression Example
 
