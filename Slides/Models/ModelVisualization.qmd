@@ -83,7 +83,7 @@ code_flag = FALSE;# Set to true and recompile after class
 ## Case Study #1
 -   **Do cancer outcomes improve when immunotherapy treatment is given in the morning?**
 -   small observational studies have been conducted to answer this question
--   Landre et al (2024) conducted a meta-analysis to answer this question more definitively than any given single study
+-   [Landre et al (2024)](https://doi.org/10.1016/j.esmoop.2023.102220) conducted a meta-analysis to answer this question more definitively than any given single study
 
 ![Reference: Landre et al (2024)](images/Forest%20Plot%20Teaser.png)
 
@@ -385,10 +385,9 @@ Data were collected as part of an observational study of stroke patients.
 
 ## Hints for Dim Mak
 
--   You can fit a linear model separately using data from each of the four age groups.
--   Create a dataframe consisting of the effect estimates and standard errors.
--   Calculate 95% CI using the formula (estimate +/- 1.96\*SE).
--   Use the `ggplot2` package and `geom_point` along with the `geom_segment` function to make your plot.
+-   You can fit a linear model with an interaction term
+-   Create a dataframe consisting of the effect estimates and standard errors using `emmeans::emtrends()`
+-   Use the `ggplot2` package and `geom_point` along with the `geom_segment` function to make your plot
 
 ## Solution: No Spice
 
@@ -397,6 +396,8 @@ Data were collected as part of an observational study of stroke patients.
 
 ```{r}
 #| label: noSpice
+
+library(tidyverse)
 
 stroke <- read.csv("stroke.csv")
 
@@ -426,6 +427,8 @@ ggplot(aes(x=Fatalism, y=Depression, color=factor(Db), shape=factor(Db)), data =
 
 ```{r}
 #| label: weakSauce
+
+library(tidyverse)
 
 stroke <- read.csv("stroke.csv")
 
@@ -465,48 +468,59 @@ ggplot(stroke_2, aes(x = Fatalism, y=Depression, color = factor(Db), shape=facto
 ```{r}
 #| label: dimMak
 
+#Load libraries with the pacman package
+library(tidyverse)
+library(emmeans)
+
+#Read in the stroke dat
 stroke <- read.csv("stroke.csv")
 
-#Initialize vectors to save results for each of the age groups
-age_group = c("Age <= 54", "Age 55-64", "Age 65-74", "Age >= 75")
-estimate = c()
-se = c()
+#Make single age group variable
+stroke <- stroke %>%
+  mutate(age_group = case_when(
+    Age_less_eq54 == 1 ~ "Age <= 54",
+    Age_55to64 == 1 ~ "Age 55-64",
+    Age_65to74 == 1 ~ "Age 65-74",
+    Age_ge75 == 1 ~ "Age >= 75"
+  ))
 
-#Fit linear models in each of the four age groups, save Estimates and SEs
-data1 <- filter(stroke, Age_less_eq54 == 1)
-mod1 <- lm(Depression ~ Fatalism, data = data1)
-estimate <- summary(mod1)$coefficients["Fatalism", "Estimate"]
-se <- summary(mod1)$coefficients["Fatalism", "Std. Error"]
+stroke$age_group <- factor(
+  stroke$age_group,
+  levels = c("Age <= 54", "Age 55-64", "Age 65-74", "Age >= 75")
+)
 
-data2 <- filter(stroke, Age_55to64 == 1)
-mod2 <- lm(Depression ~ Fatalism, data = data2)
-estimate <- c(estimate, summary(mod2)$coefficients["Fatalism", "Estimate"])
-se <- c(se, summary(mod2)$coefficients["Fatalism", "Std. Error"])
+#Fit linear regression model with interaction term
+mod <- lm(Depression ~ Fatalism * age_group, data = stroke)
 
-data3 <- filter(stroke, Age_65to74 == 1)
-mod3 <- lm(Depression ~ Fatalism, data = data3)
-estimate<- c(estimate, summary(mod3)$coefficients["Fatalism", "Estimate"])
-se <- c(se, summary(mod3)$coefficients["Fatalism", "Std. Error"])
+#Use emmeans package to extract subgroup effects
+emm <- emtrends(mod, ~ age_group, var = "Fatalism")
 
-data4 <- filter(stroke, Age_ge75 == 1)
-mod4 <- lm(Depression ~ Fatalism, data = data4)
-estimate<- c(estimate, summary(mod4)$coefficients["Fatalism", "Estimate"])
-se <- c(se, summary(mod4)$coefficients["Fatalism", "Std. Error"])
+#Make a nice dataframe for plotting
+results <- as.data.frame(emm)
 
-#Create dataframe to use for plotting and calculate 95% CI from SEs
-plot <- data.frame(age_group, estimate, se) %>%
-  mutate(lwr = estimate - 1.96*se, upr = estimate + 1.96*se)
+results <- results %>%
+  rename(
+    estimate = Fatalism.trend,
+    se = SE,
+    lwr = lower.CL,
+    upr = upper.CL
+  )
 
-#Make sure the age groups show up in the right order on our plot
-plot$age_group <- factor(plot$age_group, levels = c("Age <= 54", "Age 55-64", "Age 65-74", "Age >= 75"), ordered=TRUE)
+results$age_group <- factor(
+  results$age_group,
+  levels = c("Age <= 54", "Age 55-64", "Age 65-74", "Age >= 75")
+)
 
-#Make the forest plot!
-ggplot(data=plot, aes(x=estimate, y=age_group)) +
-  geom_point(size = 2) + 
-  geom_segment(aes(x=lwr, xend=upr)) +
-  labs(title = "Effect of Fatalism on Depression Score by Age Group", x = "Estimate", y = "Age Group") + 
+ggplot(results, aes(x = estimate, y = age_group)) +
+  geom_point(size = 2) +
+  geom_segment(aes(x = lwr, xend = upr)) +
+  labs(
+    title = "Effect of Fatalism on Depression Score by Age Group",
+    x = "Estimate",
+    y = "Age Group"
+  ) +
   xlim(-0.8, 0.8) +
-  geom_vline(xintercept = 0, linetype = "dashed", color="red")
+  geom_vline(xintercept = 0, linetype = "dashed", color = "red")
 
 ```
 
