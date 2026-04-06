@@ -27,6 +27,7 @@ editor: source
 | 3/16 | Maps | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Maps/Maps#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 | 3/23 | Chartjunk | <a href="https://psboonstra.github.io/PH345_W2026/Slides/Chartjunk/Chartjunk#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 | 3/30 | 1900 Paris Exposition | <a href="https://psboonstra.github.io/PH345_W2026/Slides/ParisExposition/ParisExposition#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
+| 4/07 | Model Visualization | <a href="https://psboonstra.github.io/PH345_W2026/Slides/ModelVisualization/ModelVisualization#/title-slide" class="btn btn-outline-primary btn-lecture">View Slides</a> |
 
 
 
