@@ -115,21 +115,35 @@ Can you think of similarities and differences between these two types of plots?
 
 **Descriptive Plots:**
 
--   boxplots, histograms show distribution of observed data
+```{r}
+#| echo: false
+#| results: 'asis'
+if (code_flag) {
+  cat("
+  - boxplots, histograms show distribution of observed data
+  - scatter plots show relationship between two continuous variables
 
--   scatter plots show relationship between two continuous variables
+How can we use the color, shapes, and other aesthetics to best convey information contained within the data?\n")
+}
+```
 
-How can we use the color, shapes, and other aesthetics to best convey information contained within the data?
 
 **Inferential Plots:**
 
--   parameter estimates (i.e. regression coefficients)
+```{r}
+#| echo: false
+#| results: 'asis'
+if (code_flag) {
+  cat("
+  - parameter estimates (i.e. regression coefficients)
+  - uncertainty in estimation (i.e. confidence bands)
+  - predicted values
 
--   uncertainty in estimation (i.e. confidence bands)
+How can we use the color, shapes, and other aesthetics to best convey the results of statistical modeling?\n")
+}
+```
 
--   predicted values
 
-How can we use the color, shapes, and other aesthetics to best convey the results of statistical modeling?
 
 ## Liner Regression Example
 
