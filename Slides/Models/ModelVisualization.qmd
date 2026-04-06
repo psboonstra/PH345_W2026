@@ -29,7 +29,7 @@ knitr::opts_chunk$set(
 out2fig = function(out.width, out.width.default = 0.7, fig.width.default = 6) {
   fig.width.default * out.width / out.width.default
 }
-code_flag = FALSE;# Set to true and recompile after class
+code_flag = TRUE;# Set to true and recompile after class
 
 ```
 
@@ -145,7 +145,7 @@ How can we use the color, shapes, and other aesthetics to best convey the result
 
 
 
-## Liner Regression Example
+## Linear Regression Example
 
 -   **Research Question:** What is the relationship between sepal width and sepal length in the irises and does the relationship differ between species?
 
