@@ -1,0 +1,214 @@
+---
+title: "Shiny"
+author: "Philip Boonstra"
+subtitle: "PH345: Winter 2026"
+format: 
+  revealjs:
+    smaller: true
+    scrollable: true
+    theme: [default, "../../styles/custom.scss"]
+    self-contained: true
+    slide-number: c/t
+    footer: "[Course Home Page](https://psboonstra.github.io/PH345_W2026/)"
+editor: source
+engine: knitr
+---
+```{r}
+library(datasauRus)
+library(tidyverse)
+library(knitr)
+library(kableExtra)
+# See here:https://arelbundock.com/posts/quarto_figures/index.html
+knitr::opts_chunk$set(
+  out.width = "70%", # enough room to breath
+  fig.width = 6,     # reasonable size
+  fig.asp = 0.618,   # golden ratio
+  fig.align = "center" # mostly what I want
+)
+out2fig = function(out.width, out.width.default = 0.7, fig.width.default = 6) {
+  fig.width.default * out.width / out.width.default 
+}
+code_flag = TRUE;# Set to true and recompile after class
+code_flag_opposite = !code_flag
+```
+## Static plots
+So far this semester we've made *static* plots: they are images that can't be modified
+or interacted with. Obviously necessary for dissemination of results in reports, journal articles, and books
+
+## Interactive plots
+No practical requirement that visualizations on websites are static. 
+*Interactive* plots allow your audience to visualize the data in ways that you may
+not have anticipated. 
+
+## Philadelphia Public Health Dashboard
+<https://philadelphiapublichealth.shinyapps.io/philastats/>
+
+## Healthdown: Drillable Map for Health Factor Comparison
+<https://hoga.shinyapps.io/healthdown/>
+
+## Road Safety Statistics: Collision Analysis Tool
+<https://department-for-transport.shinyapps.io/collision_analysis_tool_2024/>
+
+## Options for interactive plots
+- Plotly
+- ggiraph
+- Shiny
+
+## Plan for rest of semester
+- Understand what Shiny is and how it works
+- Learn about *vibe coding* — using AI tools to help write code
+- Build a Shiny app together using vibe coding
+- Create your own Shiny app using one of our datasets
+
+## What is vibe coding?
+
+*Vibe coding* means using a generative AI tool (like ChatGPT, Gemini, Claude) to write code based on 
+a description you provide in plain language.
+
+You are **not** expected to write Shiny code from scratch. You **are** expected to:
+
+- Describe your goal clearly enough that AI can scaffold the app
+- Read and understand the code that gets generated
+- Identify what the AI got wrong and fix it or re-prompt
+- Make the design and public health framing decisions yourself
+
+The AI handles syntax. You handle meaning.
+
+## Anatomy of a Shiny app
+
+Every Shiny app has three parts:
+
+```r
+library(shiny)
+
+ui <- fluidPage(
+  # What the user sees: inputs and outputs
+)
+
+server <- function(input, output) {
+  # What happens when the user interacts: the logic
+}
+
+shinyApp(ui = ui, server = server)
+```
+
+- **`ui`** defines the layout and controls (dropdowns, sliders, buttons)
+- **`server`** defines how outputs (plots, tables) respond to those controls
+- **`shinyApp()`** connects them and launches the app
+
+## Reactivity
+
+The key idea in Shiny is *reactivity*: outputs automatically update when inputs change.
+
+- The user changes a dropdown → `input$variable` changes → `renderPlot({})` runs again → new plot appears
+- You don't write a loop or a button-click handler. Shiny handles it.
+
+When vibe coding, you don't need to fully understand reactive programming — but you 
+do need to recognize when something isn't reacting correctly, so you can re-prompt or fix it.
+
+## How to prompt generative AI for a Shiny app
+
+A good opening prompt includes:
+
+1. **Dataset description**: column names, what they measure, value ranges
+2. **A specific goal**: what question should the app help answer?
+3. **Concrete interactivity**: name the inputs you want (e.g. `selectInput`, `sliderInput`)
+4. **A default visualization**: give the generative AI tool a sensible starting point
+5. **Constraints**: "use `library(shiny)` and `library(tidyverse)`"
+
+Vague prompts like *"make a Shiny app for my data"* produce generic, hard-to-debug output.
+Specific prompts produce code you can actually work with.
+
+## Example opening prompt
+
+> I have a dataset called `findex_dat` already loaded in R. It has columns: `country`, 
+> `countrycode`, `year` (2011, 2014, 2017, or 2021), `population`, `Region`, `income_group` 
+> (Low income, Lower middle income, Upper middle income, High income), and five outcome 
+> variables as proportions between 0 and 1: `account`, `borrowed`, `saved`, `mobile`, `internet`.
+>
+> Build a Shiny app with a `selectInput` to choose which variable to display, 
+> `radioButtons` to choose the survey year, and a ggplot2 boxplot showing the 
+> distribution of that variable across income groups. Include a short text panel 
+> explaining what the Findex data measures. Use `library(shiny)` and `library(tidyverse)`. 
+> Assume the data is already loaded. Do not include data loading or deployment code. 
+> Include comments explaining what each section does.
+
+## Iterating
+
+Your first output will rarely be perfect. Good follow-up prompts are specific:
+
+> The boxplot x-axis labels are overlapping. Can you wrap them to two lines and 
+> add a colorblind-friendly fill palette? Also format the y-axis as percentages 
+> (e.g. "45%" not "0.45").
+
+Things that may go wrong:
+
+- Column names that don't match your actual data
+- Reactive expressions used outside a reactive context
+- Hardcoded values that should respond to input
+- Generic axis labels and titles that don't reflect the selected variable
+
+When you hit one of these: re-prompt with the specific error or problem, 
+or fix it manually. Both are valid. Document which you did.
+
+## The prompt log
+
+As part of this assignment you will submit a **prompt log**: a record of your 
+interaction with the AI tool.
+
+Include at least **3 prompts** you actually used, copied verbatim. For at least 
+one prompt, write 2–3 sentences describing:
+
+- What the tool got wrong or what was missing from the output
+- What you changed manually, or how you re-prompted to fix it
+
+The prompt log is **4/7ths of your grade** because the process 
+of engaging critically with AI-generated code is the skill we are building.
+
+## Project suggestions
+
+1. Uses the **Vaccination** dataset to explore how vaccination rates in the US differ by birth
+cohort or by state across different dimensions (insurance status, race, or poverty status). 
+
+2. Uses the **CancerStatistics** datsets to explore how cancer mortality or
+incidence in the US have changed over time. Available are a number of different
+datasets that show differences by age group, geography, or cancer site. You can
+choose one. 
+
+Note that both datasets have columns that give confidence intervals, these should
+be incorporated. 
+
+## Expectations
+
+1. Your shiny app should have reactivity components, such as slider bars, dropdown
+menus, or buttons that allow users to interact with the data and see changes in the output.
+
+2. Your app should make use of the confidence intervals that are included in the data.
+
+3. You should provide a text panel in your app that explains the public health relevance of the data and the visualizations you created. This should be written in your own words and demonstrate your understanding of the topic.
+
+4. I want to see the log of your conversation with the generative ai tool that you
+used as well as either a link of your functioning app or screenshots of it in action. 
+
+
+## Grading
+
+| Criterion | Points |
+|---|---|
+| Prompt log: 3 verbatim prompts submitted | 1 |
+| Prompt log: prompts are specific (reference data, variables, goals) | 1 |
+| Prompt log: reflection on what Claude got wrong / what you fixed | 1 |
+| At least 2 working input widgets | 1 |
+| At least 1 ggplot output with labeled axes and reactive title | 1 |
+| Use of confidence intervals in the visualization | 1 |
+| Text panel explaining public health relevance (in your own words) | 1 |
+| **Total** | **7** |
+
+Note: a non-running app can score at most 3 points — the prompt log criteria only
+
+##
+
+Mastering Shiny by Hadley Wickham
+<https://mastering-shiny.org/index.html>
+
+## References
