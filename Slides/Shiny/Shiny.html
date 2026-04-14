@@ -1149,7 +1149,7 @@ Philip Boonstra
 <li><strong>Dataset description</strong>: column names, what they measure, value ranges</li>
 <li><strong>A specific goal</strong>: what question should the app help answer?</li>
 <li><strong>Concrete interactivity</strong>: name the inputs you want (e.g. <code>selectInput</code>, <code>sliderInput</code>)</li>
-<li><strong>A default visualization</strong>: give Claude a sensible starting point</li>
+<li><strong>A default visualization</strong>: give the generative AI tool a sensible starting point</li>
 <li><strong>Constraints</strong>: “use <code>library(shiny)</code> and <code>library(tidyverse)</code>”</li>
 </ol>
 <p>Vague prompts like <em>“make a Shiny app for my data”</em> produce generic, hard-to-debug output. Specific prompts produce code you can actually work with.</p>
@@ -1184,7 +1184,7 @@ Philip Boonstra
 <li>What the tool got wrong or what was missing from the output</li>
 <li>What you changed manually, or how you re-prompted to fix it</li>
 </ul>
-<p>The prompt log is <strong>4/7ths of your grade</strong> because the process of engaging critically with AI-generated code is the skill we are building.</p>
+<p>The prompt log is <strong>3/7ths of your grade</strong> because the process of engaging critically with AI-generated code is the skill we are building.</p>
 </section>
 <section id="project-suggestions" class="slide level2 scrollable">
 <h2>Project suggestions</h2>
@@ -1192,13 +1192,12 @@ Philip Boonstra
 <li><p>Uses the <strong>Vaccination</strong> dataset to explore how vaccination rates in the US differ by birth cohort or by state across different dimensions (insurance status, race, or poverty status).</p></li>
 <li><p>Uses the <strong>CancerStatistics</strong> datsets to explore how cancer mortality or incidence in the US have changed over time. Available are a number of different datasets that show differences by age group, geography, or cancer site. You can choose one.</p></li>
 </ol>
-<p>Note that both datasets have columns that give confidence intervals, these should be incorporated.</p>
+<p>Note that both datasets have columns that give confidence intervals. If you incorporate these you will receive a bonus point.</p>
 </section>
 <section id="expectations" class="slide level2 scrollable">
 <h2>Expectations</h2>
 <ol type="1">
 <li><p>Your shiny app should have reactivity components, such as slider bars, dropdown menus, or buttons that allow users to interact with the data and see changes in the output.</p></li>
-<li><p>Your app should make use of the confidence intervals that are included in the data.</p></li>
 <li><p>You should provide a text panel in your app that explains the public health relevance of the data and the visualizations you created. This should be written in your own words and demonstrate your understanding of the topic.</p></li>
 <li><p>I want to see the log of your conversation with the generative ai tool that you used as well as either a link of your functioning app or screenshots of it in action.</p></li>
 </ol>
@@ -1218,27 +1217,27 @@ Philip Boonstra
 </thead>
 <tbody>
 <tr class="odd">
+<td>Free point</td>
+<td>1</td>
+</tr>
+<tr class="even">
 <td>Prompt log: 3 verbatim prompts submitted</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>Prompt log: prompts are specific (reference data, variables, goals)</td>
 <td>1</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td>Prompt log: reflection on what Claude got wrong / what you fixed</td>
 <td>1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td>At least 2 working input widgets</td>
 <td>1</td>
 </tr>
-<tr class="odd">
-<td>At least 1 ggplot output with labeled axes and reactive title</td>
-<td>1</td>
-</tr>
 <tr class="even">
-<td>Use of confidence intervals in the visualization</td>
+<td>At least 1 ggplot output with labeled axes and reactive title</td>
 <td>1</td>
 </tr>
 <tr class="odd">
@@ -1249,9 +1248,14 @@ Philip Boonstra
 <td><strong>Total</strong></td>
 <td><strong>7</strong></td>
 </tr>
+<tr class="odd">
+<td>Bonus : Use of confidence intervals in the visualization</td>
+<td>+1</td>
+</tr>
 </tbody>
 </table>
-<p>Note: a non-running app can score at most 3 points — the prompt log criteria only</p>
+<p>Note: a non-running app can score at most 4 points — the prompt log criteria plus 1 free point.</p>
+<p>You can receive a max score of 8/7</p>
 </section>
 <section id="section" class="slide level2">
 <h2></h2>

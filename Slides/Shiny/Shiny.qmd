@@ -162,7 +162,7 @@ one prompt, write 2–3 sentences describing:
 - What the tool got wrong or what was missing from the output
 - What you changed manually, or how you re-prompted to fix it
 
-The prompt log is **4/7ths of your grade** because the process 
+The prompt log is **3/7ths of your grade** because the process 
 of engaging critically with AI-generated code is the skill we are building.
 
 ## Project suggestions
@@ -175,19 +175,17 @@ incidence in the US have changed over time. Available are a number of different
 datasets that show differences by age group, geography, or cancer site. You can
 choose one. 
 
-Note that both datasets have columns that give confidence intervals, these should
-be incorporated. 
+Note that both datasets have columns that give confidence intervals. If you
+incorporate these you will receive a bonus point. 
 
 ## Expectations
 
 1. Your shiny app should have reactivity components, such as slider bars, dropdown
 menus, or buttons that allow users to interact with the data and see changes in the output.
 
-2. Your app should make use of the confidence intervals that are included in the data.
+2. You should provide a text panel in your app that explains the public health relevance of the data and the visualizations you created. This should be written in your own words and demonstrate your understanding of the topic.
 
-3. You should provide a text panel in your app that explains the public health relevance of the data and the visualizations you created. This should be written in your own words and demonstrate your understanding of the topic.
-
-4. I want to see the log of your conversation with the generative ai tool that you
+3. I want to see the log of your conversation with the generative ai tool that you
 used as well as either a link of your functioning app or screenshots of it in action. 
 
 
@@ -195,16 +193,20 @@ used as well as either a link of your functioning app or screenshots of it in ac
 
 | Criterion | Points |
 |---|---|
+| Free point | 1 | 
 | Prompt log: 3 verbatim prompts submitted | 1 |
 | Prompt log: prompts are specific (reference data, variables, goals) | 1 |
 | Prompt log: reflection on what Claude got wrong / what you fixed | 1 |
 | At least 2 working input widgets | 1 |
 | At least 1 ggplot output with labeled axes and reactive title | 1 |
-| Use of confidence intervals in the visualization | 1 |
 | Text panel explaining public health relevance (in your own words) | 1 |
 | **Total** | **7** |
+| Bonus : Use of confidence intervals in the visualization | +1 |
 
-Note: a non-running app can score at most 3 points — the prompt log criteria only
+Note: a non-running app can score at most 4 points — the prompt log criteria plus
+1 free point. 
+
+You can receive a max score of 8/7
 
 ##
 
